@@ -1,0 +1,7 @@
+*.log
+*.swo
+*.swp
+*.tgz
+coverage/
+dist/
+node_modules

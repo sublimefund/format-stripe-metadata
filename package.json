@@ -1,0 +1,74 @@
+{
+    "name": "format-stripe-metadata",
+    "version": "0.1.0",
+    "description": "Ensure that Stripe metadata is valid",
+    "keywords": [
+        "stripe",
+        "metadata"
+    ],
+    "homepage": "https://github.com/sublimefund/format-stripe-metadata",
+    "bugs": "https://github.com/sublimefund/format-stripe-metadata/issues",
+    "license": "MIT",
+    "author": {
+        "name": "Danny Guo",
+        "email": "dannyguo91@gmail.com",
+        "url": "https://dannyguo.com"
+    },
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sublimefund/format-stripe-metadata.git"
+    },
+    "engines": {
+        "node": ">=4"
+    },
+    "scripts": {
+        "build": "yarn run clean && tsc",
+        "build:watch": "yarn run clean && tsc --watch",
+        "clean": "rimraf dist",
+        "format": "prettier --write \"./**/*.{json,ts}\"",
+        "format:check": "prettier --list-different \"./**/*.{json,ts}\"",
+        "lint": "tslint index.ts",
+        "prepublishOnly": "yarn run format && yarn run lint && yarn run test && yarn run build",
+        "start": "yarn install && yarn run test:watch",
+        "test": "jest",
+        "test:watch": "jest --watchAll"
+    },
+    "dependencies": {
+        "@types/stripe": "^5.0.8"
+    },
+    "devDependencies": {
+        "@types/jest": "^22.2.0",
+        "jest": "^22.4.2",
+        "prettier": "^1.11.1",
+        "rimraf": "^2.6.2",
+        "ts-jest": "^22.4.1",
+        "tslint": "^5.9.1",
+        "tslint-config-prettier": "^1.9.0",
+        "typescript": "^2.7.2"
+    },
+    "jest": {
+        "collectCoverage": true,
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ]
+    },
+    "prettier": {
+        "bracketSpacing": false,
+        "singleQuote": true,
+        "tabWidth": 4
+    }
+}
