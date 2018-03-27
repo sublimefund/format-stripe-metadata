@@ -8,3 +8,4 @@ script:
     - yarn run lint
     - yarn run test
     - yarn run build
+after_success: bash <(curl -s https://codecov.io/bash)
