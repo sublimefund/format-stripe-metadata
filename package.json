@@ -33,7 +33,7 @@
         "format": "prettier --write \"./**/*.{json,ts}\"",
         "format:check": "prettier --list-different \"./**/*.{json,ts}\"",
         "lint": "tslint index.ts",
-        "prepublishOnly": "yarn run format && yarn run lint && yarn run test && yarn run build",
+        "prepublishOnly": "yarn run format:check && yarn run lint && yarn run test && yarn run build",
         "start": "yarn install && yarn run build:watch",
         "test": "jest",
         "test:watch": "jest --watchAll"
