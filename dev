@@ -18,11 +18,11 @@ def command(help):
         return func
     return decorator
 
-@command('Format the code with Prettier')
+@command('Format the code')
 def format(args, remaining):
     return run(DOCKER_RUN + ['yarn', 'run', 'format']).returncode
 
-@command('Link the code with TSLint')
+@command('Link the code')
 def lint(args, remaining):
     return run(DOCKER_RUN + ['yarn', 'run', 'lint']).returncode
 
