@@ -48,7 +48,7 @@ formatted = formatStripeMetadata({thomas: 'edison', nikola: 'tesla'});
 formatted = formatStripeMetadata({thisisakeythatisabsurdlylong: 'Too Long'});
 // {_fullData: 'false', thisisakeythatisabsu: 'Too Long'}
 
-// The default limits can be overriden
+// The default limits can be overridden
 formated = formatStripeMetadata(metadata, {
     maxNumKeys: 15,
     maxKeyLength: 18,
